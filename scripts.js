@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const POSTAPI = {{POSTAPI}}
-    const BEARERAUTH = {{BEARERAUTH}}
+    const POSTAPI = '{{POSTAPI}}'
+    const BEARERAUTH = '{{BEARERAUTH}}'
 
     // Get the form and output elements
     const form = document.getElementById('waitListForm');

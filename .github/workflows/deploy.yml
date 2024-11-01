@@ -16,8 +16,11 @@ jobs:
 
       - name: Replace script text with github variable value
         run: |
-          sed -i -e 's/{{BEARERAUTH}}/'"${{ secrets.BEARERAUTH }}"'/g' \
-           -e 's/{{POSTAPI}}/'"${{ secrets.POSTAPI }}"'/g' scripts.js
+          sed -i "s|{{BEARERAUTH}}|${{ secrets.BEARERAUTH }}|g" scripts.js
+          sed -i "s|{{POSTAPI}}|${{ secrets.POSTAPI }}|g" scripts.js
+      
+      - name: Check replace
+        run: more scripts.js
 
       # replaces {{test}} in index.html with value of secrets.TEST in gihub repo
       #- name: Replace script text with github variable value
