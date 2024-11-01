@@ -14,14 +14,19 @@ jobs:
       - name: Use latest push to current branch 
         uses: actions/checkout@v2
 
-      # replaces {{test}} in index.html with value of secrets.TEST in gihub repo
       - name: Replace script text with github variable value
         run: |
-          sed -i 's/{{BEARERAUTH}}/'"${{ secrets.BEARERAUTH }}"'/g' scripts.js
+          sed -i -e "s|{{BEARERAUTH}}|${{ secrets.BEARERAUTH }}|g" \
+           -e "s|{{POSTAPI}}|${{ secrets.POSTAPI }}|g" scripts.js
+
+      # replaces {{test}} in index.html with value of secrets.TEST in gihub repo
+      #- name: Replace script text with github variable value
+       # run: |
+        #  sed -i 's/{{BEARERAUTH}}/'"${{ secrets.BEARERAUTH }}"'/g' scripts.js
       
-      - name: Replace script text with github variable value2
-        run: |
-          sed -i 's/{{POSTAPI}}/'"${{ secrets.POSTAPI }}"'/g' scripts.js
+      #- name: Replace script text with github variable value2
+       # run: |
+        #  sed -i 's/{{POSTAPI}}/'"${{ secrets.POSTAPI }}"'/g' scripts.js
 
       # generic github step
       - name: Deploy to github pages
