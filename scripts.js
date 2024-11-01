@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const POSTAPI = https://api.sheety.co/be370507ddc10bb893e1b81823fbf756/waitingList/sheet1
-    const BEARERAUTH = jlsahkljdhdhiu3hdoiwaqsdoiduo3i2ueup23opodpio322i
+    const POSTAPI = 'https://api.sheety.co/be370507ddc10bb893e1b81823fbf756/waitingList/sheet1'
+    const BEARERAUTH = 'jlsahkljdhdhiu3hdoiwaqsdoiduo3i2ueup23opodpio322i'
 
     // Get the form and output elements
     const form = document.getElementById('waitListForm');
