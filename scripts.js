@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    const POSTAPI = {{POSTAPI}}
+    const BEARERAUTH = {{BEARERAUTH}}
+
     // Get the form and output elements
     const form = document.getElementById('waitListForm');
     const output = document.getElementById('output');
@@ -48,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isValid) {
             try {
                 // Make API call to submit data
-                const response = await fetch('{{POSTAPI}}', {
+                const response = await fetch(POSTAPI, {
                     method: 'POST',
                     headers: {
-                        "Authorization": 'Bearer {{BEARERAUTH}}',
+                        "Authorization": 'Bearer ' + BEARERAUTH,
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
