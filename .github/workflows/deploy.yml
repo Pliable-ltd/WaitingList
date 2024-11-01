@@ -19,7 +19,7 @@ jobs:
         run: |
           sed -i 's/{{BEARERAUTH}}/'"${{ secrets.BEARERAUTH }}"'/g' scripts.js
       
-      - name: Replace script text with github variable value
+      - name: Replace script text with github variable value2
         run: |
           sed -i 's/{{POSTAPI}}/'"${{ secrets.POSTAPI }}"'/g' scripts.js
 
