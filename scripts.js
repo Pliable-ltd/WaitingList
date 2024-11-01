@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isValid) {
             try {
                 // Make API call to submit data
-                const response = await fetch({{POSTAPI}}, {
+                const response = await fetch('{{POSTAPI}}', {
                     method: 'POST',
                     headers: {
-                        "Authorization": Bearer {{BEARERAUTH}},
+                        "Authorization": 'Bearer {{BEARERAUTH}}',
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
