@@ -15,9 +15,13 @@ jobs:
         uses: actions/checkout@v2
 
       # replaces {{test}} in index.html with value of secrets.TEST in gihub repo
-      - name: Replace html text with github variable value
+      - name: Replace script text with github variable value
         run: |
-          sed -i 's/{{test}}/'"${{ secrets.TEST }}"'/g' index.html
+          sed -i 's/{{BEARERAUTH}}/'"${{ secrets.BEARERAUTH }}"'/g' scripts.js
+      
+      - name: Replace script text with github variable value
+        run: |
+          sed -i 's/{{POSTAPI}}/'"${{ secrets.POSTAPI }}"'/g' scripts.js
 
       # generic github step
       - name: Deploy to github pages

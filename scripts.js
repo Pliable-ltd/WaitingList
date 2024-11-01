@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // All JavaScript code goes here
-    const BEARER_AUTH = "sadkjd3i3w32iio2p31oiwq2io3uio234uyu42jhj4h22"; 
-    const SHEETY_URL = "https://api.sheety.co/fae400a0ae60239e95d37107d53c84f5/pliableResponses/sheet1";
 
     // Get the form and output elements
     const form = document.getElementById('waitListForm');
@@ -51,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isValid) {
             try {
                 // Make API call to submit data
-                const response = await fetch(SHEETY_URL, {
+                const response = await fetch({{POSTAPI}}, {
                     method: 'POST',
                     headers: {
-                        "Authorization": `Bearer ${BEARER_AUTH}`,
+                        "Authorization": `Bearer {{BEARERAUTH}}`,
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
