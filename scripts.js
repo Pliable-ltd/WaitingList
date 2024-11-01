@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await fetch({{POSTAPI}}, {
                     method: 'POST',
                     headers: {
-                        "Authorization": `Bearer {{BEARERAUTH}}`,
+                        "Authorization": Bearer {{BEARERAUTH}},
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
